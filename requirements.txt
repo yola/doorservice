@@ -1,2 +1,2 @@
 Flask==0.10.1
-Flask-Login==0.2.11
+RPi.GPIO==0.5.5

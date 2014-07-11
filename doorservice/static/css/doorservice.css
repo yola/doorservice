@@ -1,0 +1,22 @@
+body {
+    padding: 2vw;
+}
+
+button.btn-lg {
+    height: 100%;
+    width: 100%;
+    font-size: 30vw;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 3vw;
+    letter-spacing: -2vw;
+}
+
+button.btn-lg:active {
+    margin-top: 1vw;
+    margin-left: 1vw;
+}
+
+div[class*="panel"] {
+    font-size: 18px;
+}
