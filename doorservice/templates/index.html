@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Doorservice</title>
+    <link href="/static/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/doorservice.css">
+</head>
+<body>
+    <main class="text-center">
+        <form role="form" method="POST" action="/">
+            {% if auth and unset %}
+                <button class="btn btn-primary btn-lg" type="submit" name="door-button" value="open-door">Open</button>
+            {% elif auth and success %}
+                <button class="btn btn-success btn-lg" type="submit" name="door-button" value="open-door">Open</button>
+            {% elif auth and not success %}
+                <button class="btn btn-danger btn-lg" type="submit" name="door-button" value="open-door">Open</button>
+            {% elif not auth %}
+                <button class="btn disabled btn-warning btn-lg" type="submit" name="door-button" value="open-door">Open</button>
+            {% endif %}
+        </form>
+    </main>
+</body>
+</html>
