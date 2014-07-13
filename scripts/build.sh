@@ -11,3 +11,5 @@ $(npm bin)/bower install
 
 virtualenv virtualenv
 virtualenv/bin/pip install -r requirements.txt
+
+mv doorservice/settings.example.py doorservice/settings.py
