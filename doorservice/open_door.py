@@ -1,7 +1,8 @@
 import time
-import RPi.GPIO as GPIO
 
 def open_door():
+    import RPi.GPIO as GPIO
+    
     GPIO.setmode(GPIO.BCM)
 
     pin = 0
