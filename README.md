@@ -1,5 +1,55 @@
-![Yodor](https://raw.github.com/yola/doorservice/master/yodor.png)
-
+![Yodoor](https://raw.github.com/yola/doorservice/master/yodoor.png)
 #Doorservice
 
 Doorservice opens the door.
+
+##Introduction
+
+As is customary, the lowest ranking member of any office is to open the door
+when the bell chimes.
+
+As of now, this tradition is no more.
+
+We now live in an era of machines and computers and with the mere press of
+an oversized button, the door will open itself.
+
+The wait is over, the captives are free. Ne'er again will man obey the chime.
+
+Button pressing is now virtual.
+
+##Installation
+
+>Note: This setup requires a Raspberry Pi, a relay controlled by said Raspberry
+Pi and for the relay to be connected to the door control.
+
+1. Clone this repository.
+2. Run  `/scripts/build.sh`.
+3. Set all your settings in the `/doorservice/settings.py` file. (An example is provided)
+3. Move all the files in the directory onto the Raspberry Pi.
+4. Set up a server. (Try [gunicorn](http://gunicorn.org), you can find examples/tutorials [here](http://flask.pocoo.org/docs/deploying/wsgi-standalone/).)
+5. Run `run.py`.
+
+Now you can access the button by connecting to the server you set up in step 4.
+
+An authentication pop-up should appear, enter your username and password as set
+in `/doorservice/settings.py`.
+
+After successfully authenticating, you should see a large blue button.
+
+Press the button. Go on, press it.
+
+That's it.
+
+If it's green, it means the door should be open. If it's red, it means something
+went wrong.
+
+##Button Colours
+
+###1. Green
+Everything is probably working just fine. All the code executed without error.
+
+###2. Orange
+You aren't authenticated and will be unable to operate the button.
+
+###3. Red
+Something went wrong, horribly wrong.
