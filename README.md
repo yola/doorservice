@@ -19,9 +19,21 @@ Button pressing is now virtual.
 
 ##Installation
 
+###Prerequisites
 >Note: This setup requires a Raspberry Pi, a relay controlled by said Raspberry
 Pi and for the relay to be connected to the door control.
 
+These packages are required on the Raspberry Pi before you can run `./scripts/build.sh`.
+1. Node.js
+`sudo apt-get install nodejs`
+2. Pip
+`sudo apt-get install python-pip`
+3. Virtualenv
+`pip install virtualenv`
+4. GPIO on the Raspberry Pi
+`pip install RPi.GPIO`
+
+###Instructions
 1. Clone this repository.
 2. Run  `./scripts/build.sh`.
 3. Set all your settings in the `./doorservice/settings.py` file. (An example is provided)
