@@ -1,5 +1,5 @@
-![Yodoor](./yodoor.png)
 #Doorservice
+![Yodoor](yodoor.png)
 
 Doorservice opens the door.
 
@@ -10,8 +10,8 @@ when the bell chimes.
 
 As of now, this tradition is no more.
 
-We now live in an era of machines and computers and with the mere press of
-an oversized button, the door will open itself.
+We now live in an era of machines and computers, with the mere press of an
+oversized button, the door will open itself.
 
 The wait is over, the captives are free. Ne'er again will man obey the chime.
 
@@ -32,7 +32,7 @@ These packages are required on the Raspberry Pi before you can run `./scripts/bu
 
 ###Instructions
 1. Clone this repository.
-2. Run  `./scripts/build.sh`.
+2. Run  `scripts/build.sh`.
 3. Set all your settings in the `./doorservice/settings.py` file. (An example is provided)
 3. Move all the files in the directory onto the Raspberry Pi.
 4. Set up a server. (Documentation [here](http://flask.pocoo.org/docs/deploying/wsgi-standalone/))
