@@ -1,9 +1,9 @@
-#Doorservice
 ![Yodoor](yodoor.png)
+# Doorservice
 
 Doorservice opens the door.
 
-##Introduction
+## Introduction
 
 As is customary, the lowest ranking member of any office is to open the door
 when the bell chimes.
@@ -17,9 +17,9 @@ The wait is over, the captives are free. Ne'er again will man obey the chime.
 
 Button pressing is now virtual.
 
-##Installation
+## Installation
 
-###Prerequisites
+### Prerequisites
 >Note: This setup requires a Raspberry Pi, a relay controlled by said Raspberry
 Pi and for the relay to be connected to the door control.
 
@@ -30,7 +30,7 @@ These packages are required on the Raspberry Pi before you can run `./scripts/bu
 3. Virtualenv `pip install virtualenv`
 4. GPIO on the Raspberry Pi `sudo apt-get install python-rpi.gpio`
 
-###Instructions
+### Instructions
 1. Clone this repository.
 2. Run  `scripts/build.sh`.
 3. Set all your settings in the `./doorservice/settings.py` file. (An example is provided)
@@ -52,13 +52,13 @@ That's it.
 If it's green, it means the door should be open. If it's red, it means something
 went wrong.
 
-##Button Colours
+## Button Colours
 
-###1. Green
+### 1. Green
 Everything is probably working just fine. All the code executed without error.
 
-###2. Orange
+### 2. Orange
 You aren't authenticated and will be unable to operate the button.
 
-###3. Red
+### 3. Red
 Something went wrong, horribly wrong.
