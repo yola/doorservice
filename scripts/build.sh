@@ -13,4 +13,6 @@ $(npm bin)/bower install
 virtualenv --system-site-packages virtualenv
 virtualenv/bin/pip install -r requirements.txt
 
-mv doorservice/settings.example.py doorservice/settings.py
+if [ ! -f doorservice/settings.py ]; then
+  mv doorservice/settings.example.py doorservice/settings.py
+fi
