@@ -14,5 +14,5 @@ virtualenv --system-site-packages virtualenv
 virtualenv/bin/pip install -r requirements.txt
 
 if [ ! -f doorservice/settings.py ]; then
-  mv doorservice/settings.example.py doorservice/settings.py
+  cp doorservice/settings.example.py doorservice/settings.py
 fi
