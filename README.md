@@ -26,9 +26,8 @@ Pi and for the relay to be connected to the door control.
 These packages are required on the Raspberry Pi before you can run `./scripts/build.sh`.
 
 1. Node.js `sudo apt-get install nodejs`
-2. Pip `sudo apt-get install python-pip`
-3. Virtualenv `pip install virtualenv`
-4. GPIO on the Raspberry Pi `sudo apt-get install python-rpi.gpio`
+2. Virtualenv `sudo apt-get install python-virtualenv`
+3. GPIO on the Raspberry Pi `sudo apt-get install python-rpi.gpio`
 
 ### Instructions
 1. Clone this repository.
