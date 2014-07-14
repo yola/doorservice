@@ -1,4 +1,4 @@
-![Yodoor](https://raw.github.com/yola/doorservice/master/yodoor.png)
+![Yodoor](./yodoor.png)
 #Doorservice
 
 Doorservice opens the door.
@@ -23,16 +23,16 @@ Button pressing is now virtual.
 Pi and for the relay to be connected to the door control.
 
 1. Clone this repository.
-2. Run  `/scripts/build.sh`.
-3. Set all your settings in the `/doorservice/settings.py` file. (An example is provided)
+2. Run  `./scripts/build.sh`.
+3. Set all your settings in the `./doorservice/settings.py` file. (An example is provided)
 3. Move all the files in the directory onto the Raspberry Pi.
-4. Set up a server. (Try [gunicorn](http://gunicorn.org), you can find examples/tutorials [here](http://flask.pocoo.org/docs/deploying/wsgi-standalone/).)
-5. Run `run.py`.
+4. Set up a server. (Documentation [here](http://flask.pocoo.org/docs/deploying/wsgi-standalone/))
+5. Run `./run.py`.
 
 Now you can access the button by connecting to the server you set up in step 4.
 
 An authentication pop-up should appear, enter your username and password as set
-in `/doorservice/settings.py`.
+in `./doorservice/settings.py`.
 
 After successfully authenticating, you should see a large blue button.
 
