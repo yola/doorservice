@@ -1,34 +1,15 @@
 import time
 
-def open_outer_door():
+def open_door(pin_num, sleep_time):
     import RPi.GPIO as GPIO
     
     GPIO.setmode(GPIO.BCM)
 
-    pin = 0
+    GPIO.setup(pin_num, GPIO.OUT)
+    GPIO.output(pin_num, GPIO.HIGH)
 
-    GPIO.setup(pin, GPIO.OUT)
-    GPIO.output(pin, GPIO.HIGH)
-
-    GPIO.output(pin, GPIO.LOW)
-    time.sleep(0.5)
-    GPIO.output(pin, GPIO.HIGH)
-
-    return True
-
-
-def open_inner_door():
-    import RPi.GPIO as GPIO
-
-    GPIO.setmode(GPIO.BCM)
-
-    pin = 1
-
-    GPIO.setup(pin, GPIO.OUT)
-    GPIO.output(pin, GPIO.HIGH)
-
-    GPIO.output(pin, GPIO.LOW)
-    time.sleep(0.5)
-    GPIO.output(pin, GPIO.HIGH)
+    GPIO.output(pin_num, GPIO.LOW)
+    time.sleep(sleep_time)
+    GPIO.output(pin_num, GPIO.HIGH)
 
     return True

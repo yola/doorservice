@@ -2,7 +2,7 @@ from flask import render_template, request
 from doorservice import app
 from auth import auth_decorator
 
-from open_door import open_inner_door, open_outer_door
+from open_door import open_door
 
 
 @app.route("/", methods=['GET'])
@@ -28,10 +28,10 @@ def opendoor():
 
     if request.form.get('outer-door-button') == 'open-door':
         outer_door['set'] = True
-        outer_door['success'] = open_outer_door()
+        outer_door['success'] = open_door(0, 0.5)
     elif request.form.get('inner-door-button') == 'open-door':
         inner_door['set'] = True
-        inner_door['success'] = open_inner_door()
+        inner_door['success'] = open_door(1, 3)
 
     context['outer_door'] = outer_door
     context['inner_door'] = inner_door
