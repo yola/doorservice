@@ -9,5 +9,10 @@ npm install
 $(npm bin)/bower prune
 $(npm bin)/bower install
 
-virtualenv virtualenv
+# installs GPIO from the RPi's existing packages.
+virtualenv --system-site-packages virtualenv
 virtualenv/bin/pip install -r requirements.txt
+
+if [ ! -f doorservice/settings.py ]; then
+  cp doorservice/settings.example.py doorservice/settings.py
+fi
