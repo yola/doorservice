@@ -1,22 +1,19 @@
 body {
-    padding: 2vw;
+    padding: 0.25vw;
 }
 
 button.btn-lg {
-    height: 100%;
     width: 100%;
-    font-size: 30vw;
+    font-size: 15vw;
     font-weight: bold;
     text-transform: uppercase;
     border-radius: 3vw;
-    letter-spacing: -2vw;
+    letter-spacing: -1vw;
+    margin-bottom: 3px;
+    padding-top: 0;
 }
 
 button.btn-lg:active {
-    margin-top: 1vw;
-    margin-left: 1vw;
-}
-
-div[class*="panel"] {
-    font-size: 18px;
+    margin-top: 0.25vw;
+    margin-left: 0.25vw;
 }
