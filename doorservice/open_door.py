@@ -1,5 +1,6 @@
 import time
 
+
 def open_door(pin_num, sleep_time):
     import RPi.GPIO as GPIO
     
