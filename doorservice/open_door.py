@@ -1,8 +1,10 @@
 import time
+from settings import TIMED_DELAY
+
 
 def open_door(pin_num, sleep_time):
     import RPi.GPIO as GPIO
-    
+    time.sleep(TIMED_DELAY)
     GPIO.setmode(GPIO.BCM)
 
     GPIO.setup(pin_num, GPIO.OUT)
