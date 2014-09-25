@@ -60,3 +60,11 @@ def not_found(error):
     context['outer_door'] = outer_door
     context['inner_door'] = inner_door
     return render_template('index.html', **context)
+
+
+@app.context_processor
+def inject_button_labels():
+    return {
+        'outer_door_label': OUTER_DOOR_LABEL,
+        'inner_door_label': INNER_DOOR_LABEL,
+    }
