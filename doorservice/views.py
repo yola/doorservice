@@ -15,9 +15,6 @@ def index():
     inner_door = dict()
     context['auth'] = True
 
-    outer_door['label'] = OUTER_DOOR_LABEL
-    inner_door['label'] = INNER_DOOR_LABEL
-
     context['outer_door'] = outer_door
     context['inner_door'] = inner_door
     return render_template('index.html', **context)
@@ -38,9 +35,6 @@ def opendoor():
         inner_door['set'] = True
         inner_door['success'] = open_door(INNER_DOOR_PIN, INNER_DOOR_DELAY)
 
-    outer_door['label'] = OUTER_DOOR_LABEL
-    inner_door['label'] = INNER_DOOR_LABEL
-
     context['outer_door'] = outer_door
     context['inner_door'] = inner_door
     return render_template('index.html', **context)
@@ -53,9 +47,6 @@ def not_found(error):
     outer_door = dict()
     inner_door = dict()
     context['auth'] = True
-
-    outer_door['label'] = OUTER_DOOR_LABEL
-    inner_door['label'] = INNER_DOOR_LABEL
 
     context['outer_door'] = outer_door
     context['inner_door'] = inner_door

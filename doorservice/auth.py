@@ -3,8 +3,6 @@ from functools import wraps
 from flask import request, Response, render_template
 from doorservice import app
 
-from settings import INNER_DOOR_LABEL, OUTER_DOOR_LABEL
-
 
 def check_auth(username, password):
     """This function is called to check if a username /
@@ -16,16 +14,7 @@ def check_auth(username, password):
 
 def authenticate():
     """Sends a 401 response that enables basic auth"""
-    context = {
-        'auth': False,
-        'outer_door': {
-            'label': OUTER_DOOR_LABEL,
-        },
-        'inner_door': {
-            'label': INNER_DOOR_LABEL,
-        },
-    }
-    return Response(render_template('index.html', **context), 401,
+    return Response(render_template('index.html', **{'auth': False,}), 401,
                     {'WWW-Authenticate': 'Basic realm="Login Required"'})
 
 
