@@ -3,12 +3,15 @@ PASSWORD = 'password'
 HOST = '127.0.0.1'
 PORT = 5000
 
-OUTER_DOOR_LABEL = 'Open Outer'
-OUTER_DOOR_PIN = 0
-OUTER_DOOR_DELAY = 0.5
-
-INNER_DOOR_LABEL = 'Open Inner'
-INNER_DOOR_PIN = 1
-INNER_DOOR_DELAY = 1
-
 TIMED_DELAY = 2
+
+BUTTONS = {
+    'Open Outer': {
+        'pin': 0,
+        'delay': 0.5,
+    },
+    'Open Inner': {
+        'pin': 1,
+        'delay': 1,
+    },
+}
