@@ -12,26 +12,13 @@
 <body>
     <main class="text-center">
         <form role="form" method="POST" action="/">
-            {% if auth %}
-                {% if not outer_door.set %}
-                    <button class="btn btn-primary btn-lg" type="submit" name="outer-door-button" value="open-door">{{ outer_door_label }}</button>
-                {% elif outer_door.success %}
-                    <button class="btn btn-success btn-lg" type="submit" name="outer-door-button" value="open-door">{{ outer_door_label }}</button>
+            {% for button_label, data in buttons.iteritems() %}
+                {% if auth %}
+                    <button class="btn btn-{% if data.state %}{{ data.state }}{% else %}primary{% endif %} btn-lg" type="submit" name="{{ button_label }}" value="open-door">{{ button_label }}</button>
                 {% else %}
-                    <button class="btn btn-danger btn-lg" type="submit" name="outer-door-button" value="open-door">{{ outer_door_label }}</button>
+                    <button class="btn disabled btn-warning btn-lg">{{ button_label }}</button>
                 {% endif %}
-
-                {% if not inner_door.set %}
-                    <button class="btn btn-primary btn-lg" type="submit" name="inner-door-button" value="open-door">{{ inner_door_label }}</button>
-                {% elif inner_door.success %}
-                    <button class="btn btn-success btn-lg" type="submit" name="inner-door-button" value="open-door">{{ inner_door_label }}</button>
-                {% else %}
-                    <button class="btn btn-danger btn-lg" type="submit" name="inner-door-button" value="open-door">{{ inner_door_label }}</button>
-                {% endif %}
-            {% else %}
-                <button class="btn disabled btn-warning btn-lg">{{ outer_door_label }}</button>
-                <button class="btn disabled btn-warning btn-lg">{{ inner_door_label }}</button>
-            {% endif %}
+            {% endfor %}
         </form>
         <blockquote>
             <p>
