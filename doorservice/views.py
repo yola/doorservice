@@ -3,20 +3,15 @@ from doorservice import app
 from auth import auth_decorator
 
 from open_door import open_door
-from settings import (INNER_DOOR_LABEL, INNER_DOOR_PIN, INNER_DOOR_DELAY,
-                      OUTER_DOOR_LABEL, OUTER_DOOR_PIN, OUTER_DOOR_DELAY)
+from settings import BUTTONS
 
 
 @app.route("/", methods=['GET'])
 @auth_decorator()
 def index():
     context = dict()
-    outer_door = dict()
-    inner_door = dict()
     context['auth'] = True
 
-    context['outer_door'] = outer_door
-    context['inner_door'] = inner_door
     return render_template('index.html', **context)
 
 
@@ -24,8 +19,6 @@ def index():
 @auth_decorator()
 def opendoor():
     context = dict()
-    outer_door = dict()
-    inner_door = dict()
     context['auth'] = True
 
     if request.form.get('outer-door-button') == 'open-door':
@@ -35,8 +28,6 @@ def opendoor():
         inner_door['set'] = True
         inner_door['success'] = open_door(INNER_DOOR_PIN, INNER_DOOR_DELAY)
 
-    context['outer_door'] = outer_door
-    context['inner_door'] = inner_door
     return render_template('index.html', **context)
 
 
@@ -44,18 +35,13 @@ def opendoor():
 @auth_decorator()
 def not_found(error):
     context = dict()
-    outer_door = dict()
-    inner_door = dict()
     context['auth'] = True
 
-    context['outer_door'] = outer_door
-    context['inner_door'] = inner_door
     return render_template('index.html', **context)
 
 
 @app.context_processor
 def inject_button_labels():
     return {
-        'outer_door_label': OUTER_DOOR_LABEL,
-        'inner_door_label': INNER_DOOR_LABEL,
+        'buttons': BUTTONS,
     }
