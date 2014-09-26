@@ -21,12 +21,12 @@ def opendoor():
     context = dict()
     context['auth'] = True
 
-    if request.form.get('outer-door-button') == 'open-door':
-        outer_door['set'] = True
-        outer_door['success'] = open_door(OUTER_DOOR_PIN, OUTER_DOOR_DELAY)
-    elif request.form.get('inner-door-button') == 'open-door':
-        inner_door['set'] = True
-        inner_door['success'] = open_door(INNER_DOOR_PIN, INNER_DOOR_DELAY)
+    for data in request.form:
+        if data in BUTTONS:
+            if open_door(BUTTONS[data]['pin'], BUTTONS[data]['delay']):
+                BUTTONS[data]['state'] = 'success'
+            else:
+                BUTTONS[data]['state'] = 'danger'
 
     return render_template('index.html', **context)
 
