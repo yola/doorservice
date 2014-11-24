@@ -14,7 +14,7 @@ def check_auth(username, password):
 
 def authenticate():
     """Sends a 401 response that enables basic auth"""
-    return Response(render_template('index.html', **{'auth':False}), 401,
+    return Response(render_template('index.html', auth=False), 401,
                     {'WWW-Authenticate': 'Basic realm="Login Required"'})
 
 
