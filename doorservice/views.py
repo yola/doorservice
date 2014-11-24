@@ -38,6 +38,16 @@ def not_found(error):
     return render_template('index.html', **context)
 
 
+@app.errorhandler(500)
+@auth_decorator()
+def internal_server_error(error):
+    context = dict()
+    context['auth'] = True
+    context['state'] = 'danger'
+
+    return render_template('index.html', **context)
+
+
 @app.context_processor
 def inject_button_labels():
     return {
