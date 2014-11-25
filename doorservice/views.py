@@ -20,12 +20,13 @@ def index():
 def opendoor():
     context = dict()
     context['auth'] = True
-
+    button_pressed = ''
     for data in request.form:
         if data in BUTTONS:
             open_door(BUTTONS[data]['pin'], BUTTONS[data]['delay'])
+            button_pressed = data
 
-    context['state'] = 'success'
+    context['button_pressed'] = button_pressed
     return render_template('index.html', **context)
 
 

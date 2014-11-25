@@ -13,7 +13,7 @@
         <form role="form" method="POST" action="/">
             {% for button_label, data in buttons.iteritems() %}
                 {% if auth %}
-                    <button class="btn btn-{% if state %}{{ state }}{% else %}primary{% endif %} btn-lg" type="submit" name="{{ button_label }}" value="open-door">{{ button_label }}</button>
+                    <button class="btn btn-{% if state %}{{ state }}{% elif button_label == button_pressed %}success{% else %}primary{% endif %} btn-lg" type="submit" name="{{ button_label }}" value="open-door">{{ button_label }}</button>
                 {% else %}
                     <button class="btn disabled btn-warning btn-lg">{{ button_label }}</button>
                 {% endif %}
