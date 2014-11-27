@@ -1,8 +1,0 @@
-{
-  "name": "doorservice",
-  "private": true,
-  "version": "0.0.1",
-  "devDependencies": {
-    "bower": "^1.3.7"
-  }
-}

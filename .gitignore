@@ -4,3 +4,4 @@ virtualenv.tar.gz
 *.py[co]
 bower_components
 node_modules
+bootstrap.css
