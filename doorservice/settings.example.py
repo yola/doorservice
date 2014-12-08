@@ -8,14 +8,8 @@ PORT = 5000
 TIMED_DELAY = 2
 
 BUTTONS = OrderedDict(
-    {
-        'Open Outer': {
-            'pin': 0,
-            'delay': 0.5,
-        },
-        'Open Inner': {
-            'pin': 1,
-            'delay': 1,
-        },
-    }
+    (
+        ('Open Outer', {'pin': 0, 'delay': 0.5}),
+        ('Open Inner', {'pin': 1, 'delay': 0.5})
+    )
 )

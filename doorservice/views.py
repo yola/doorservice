@@ -20,14 +20,13 @@ def index():
 def opendoor():
     context = dict()
     context['auth'] = True
-
+    button_pressed = ''
     for data in request.form:
         if data in BUTTONS:
-            if open_door(BUTTONS[data]['pin'], BUTTONS[data]['delay']):
-                BUTTONS[data]['state'] = 'success'
-            else:
-                BUTTONS[data]['state'] = 'danger'
+            open_door(BUTTONS[data]['pin'], BUTTONS[data]['delay'])
+            button_pressed = data
 
+    context['button_pressed'] = button_pressed
     return render_template('index.html', **context)
 
 
@@ -36,6 +35,16 @@ def opendoor():
 def not_found(error):
     context = dict()
     context['auth'] = True
+
+    return render_template('index.html', **context)
+
+
+@app.errorhandler(500)
+@auth_decorator()
+def internal_server_error(error):
+    context = dict()
+    context['auth'] = True
+    context['state'] = 'danger'
 
     return render_template('index.html', **context)
 
