@@ -8,9 +8,9 @@ WantedBy=multi-user.target
 [Service]
 Restart=always
 
-ExecStart=/home/pi/doorservice/virtualenv/bin/python run.py
+ExecStart=/home/pi/doorservice/virtualenv/bin/python -m flask run -h 0.0.0.0
 
 WorkingDirectory=/home/pi/doorservice
-Environment=PYTHONPATH=/home/pi/doorservice
+Environment=FLASK_APP=doorservice
 
 PrivateTmp=true

@@ -35,7 +35,7 @@ These packages are required on the Raspberry Pi before you can run `scripts/buil
 3. Set all your settings in the `doorservice/settings.py` file. (An example is provided)
 3. Move all the files in the directory onto the Raspberry Pi.
 4. Set up a server. `scripts/install.sh`.
-5. Run `./run.py`.
+5. Run `FLASK_APP=doorservice flask run`.
 
 Now you can access the button by connecting to the server you set up in step 4.
 
