@@ -8,12 +8,7 @@ WantedBy=multi-user.target
 [Service]
 Restart=always
 
-ExecStart=/home/pi/doorservice/virtualenv/bin/python -m gunicorn.app.wsgiapp \
-          --workers=2 --timeout=60 --log-level=debug \
-          run
-
-ExecReload=/bin/kill -s HUP $MAINPID
-ExecStop=/bin/kill -s TERM $MAINPID
+ExecStart=/home/pi/doorservice/virtualenv/bin/python run.py
 
 WorkingDirectory=/home/pi/doorservice
 Environment=PYTHONPATH=/home/pi/doorservice
